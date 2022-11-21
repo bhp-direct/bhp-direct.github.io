@@ -1,0 +1,641 @@
+﻿body {
+  font-size: 1.5em;
+  color: white;
+  margin: 0;
+  font-family: Anton, sans-serif;
+  overflow-x: hidden;
+}
+
+.display-4 {
+  text-shadow: 0.05em 0.07em rgb(56 59 55);
+}
+
+.quote {
+  margin-left: 67%;
+  margin-right: 0;
+  margin-top: 2%;
+  font-size: 1.8vw;
+}
+
+@media only screen and (min-width: 990px) {
+  .shrink {
+    -webkit-animation-name: shrink;
+    animation-name: shrink;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+  }
+
+  #regular-nav {
+    display: inline-block;
+  }
+
+  #mobile-nav {
+    display: none;
+  }
+
+  @-webkit-keyframes shrink {
+    0% {
+      width: 18%;
+    }
+    100% {
+      width: 14%;
+    }
+  }
+
+  @keyframes shrink {
+    0% {
+      width: 18%;
+    }
+    100% {
+      width: 14%;
+    }
+  }
+
+  .expand {
+    -webkit-animation-name: expand;
+    animation-name: expand;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+  }
+
+  @-webkit-keyframes expand {
+    0% {
+      width: 14%;
+    }
+    100% {
+      width: 18%;
+    }
+  }
+
+  @keyframes expand {
+    0% {
+      width: 14%;
+    }
+    100% {
+      width: 18%;
+    }
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  .navbar.navbar-expand-lg.fixed-top {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  #regular-nav {
+    display: none;
+  }
+
+  #mobile-nav {
+    display: inline;
+    padding: 6% 0;
+    font-size: 5vw;
+    margin-left: 2vw;
+    color: white;
+    text-decoration: none;
+  }
+
+  .navbar > .container-fluid {
+    align-items: initial;
+    border: 4px solid rgba(256, 256, 256, 0.2);
+  }
+
+  .container-fluid {
+    padding: 0;
+  }
+
+  .navbar-brand {
+    display: none;
+  }
+
+  p.lead.quote {
+    margin-left: 0;
+    margin-top: 5em;
+    font-size: 4vw;
+  }
+
+  p.lead,
+  label.form-label {
+    font-size: 5vw;
+    margin-top: 1em;
+    width: 100%;
+  }
+
+  span.lead {
+    font-size: 4vw;
+  }
+
+  div.lead.banner-msg {
+    font-size: 5vw;
+  }
+
+  a.btn {
+    margin-top: 3vw;
+    width: 15em;
+  }
+
+  form a.btn {
+    width: 10em;
+  }
+
+  span.fadeIn.appear {
+    padding: 6% 0;
+    font-size: 0.6em;
+    margin-left: 2vw;
+    color: white;
+    text-decoration: none;
+  }
+
+  span.fadeIn.appear span {
+    padding: 0;
+    font-size: 1.2em;
+    color: white;
+    text-decoration: none;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 2em 4.5em;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    font-size: 1.7em;
+    border-right: 4px solid rgba(256, 256, 256, 0.2);
+  }
+
+  div p,
+  div p span,
+  div .description,
+  div .description span,
+  .bannerThree span,
+  .contactMsg {
+    font-size: 4vw;
+    width: 80%;
+    margin-top: 0.6em;
+  }
+
+  div img.portrait {
+    margin: 1.4em 0 0.4em 18vw;
+    border-radius: 50%;
+    min-width: 17vw;
+    max-width: 17vw;
+    max-height: 16vw;
+    min-height: 16vw;
+  }
+
+  header.heroImage {
+    height: 160vw; /*was 24em*/
+  }
+
+  span.card-title {
+    font-size: 4em;
+  }
+
+  p.card-text {
+    font-size: 3em;
+    padding-bottom: 1.5em;
+  }
+
+  img.card-img-top {
+    height: 40vw;
+  }
+}
+
+.fadeIn {
+  -webkit-transition: opacity 2s ease-out;
+  -webkit-transition: opacity 2s ease-out;
+  -o-transition: opacity 2s ease-out;
+  transition: opacity 2s ease-out;
+  opacity: 0;
+}
+
+.appear {
+  -webkit-animation-name: appear;
+  animation-name: appear;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+}
+
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+/* begin navbar styles */
+.navbar {
+  background-color: firebrick;
+  opacity: 95%;
+  width: 60%;
+  margin-left: 40%;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='12' stroke-width='4' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  display: inline-block;
+  width: 2.1em;
+  height: 2em;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 130%;
+}
+
+.navbar-toggler {
+  background-color: #fba922;
+  border-radius: 0;
+  width: 18%;
+}
+
+.navbar-toggler:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.navbar-brand {
+  padding: 0 2%;
+  width: 18%;
+  height: 1%;
+}
+
+.navbar-nav {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border-top: 4px solid rgba(256, 256, 256, 0.2);
+}
+
+nav span,
+.nav-link,
+section span {
+  color: white;
+  text-decoration: none;
+  text-shadow: 0.12em 0.11em rgb(56, 59, 55);
+}
+
+.whiteLink,
+#headingTwo {
+  color: white;
+}
+
+.nav-link:hover,
+.btn:hover,
+a:hover,
+.fa-caret-right {
+  color: #fba922;
+}
+/* end navbar styles */
+
+span {
+  font-size: 1.2vw;
+}
+
+p {
+  width: 30%;
+  color: rgb(56, 59, 55);
+  font-size: 1.5vw;
+  margin: 0 auto;
+  margin-bottom: 2%;
+}
+
+li {
+  font-size: 1.7vw;
+}
+
+a {
+  text-decoration: none;
+}
+
+div span,
+section span {
+  font-size: 1.5vw;
+  color: white;
+  text-decoration: none;
+}
+
+div a:nth-of-type(2) {
+  color: white;
+  font-size: 0.8em;
+  text-decoration: none;
+}
+
+h1 span {
+  font-size: 3vw;
+  font-family: Pacifico, cursive;
+  text-shadow: 2px 1px white;
+}
+
+.lead {
+  font-family: Pacifico, cursive;
+  color: white;
+  font-size: 2vw;
+  text-shadow: 0.05em 0.1em rgb(56, 59, 55);
+}
+
+.btn {
+  background-color: firebrick;
+  font-family: Anton;
+  font-size: 0.7em;
+  color: white;
+  border: 3px solid rgb(56, 59, 55);
+  margin-top: 3%;
+  width: 12em;
+  text-shadow: 0.12em 0.11em rgb(56, 59, 55);
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+.description {
+  color: rgb(56, 59, 55);
+  font-size: 1.5vw;
+  padding-left: 0.8em;
+  border-left: 6px solid firebrick;
+}
+
+.highlight,
+.contactMsg {
+  color: firebrick;
+}
+
+.display-5,
+.display-3 {
+  color: rgb(56, 59, 55);
+}
+
+.portrait {
+  border-radius: 50%;
+  min-width: 116px;
+  max-width: 80%;
+  max-height: 19vh;
+  min-height: 19vh;
+  margin: 2% 0 12% 21vw;
+}
+
+.row {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  border: none;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  --bs-gutter-x: 0;
+}
+
+.col-3 {
+  padding: 0;
+}
+
+.heroImage {
+  width: 100%;
+  background-image: url("./images/heroimage-min.jpeg");
+  height: 50vw;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.fixBG {
+  background-attachment: initial;
+}
+
+.jumbotron {
+  padding-top: 2.5em;
+}
+
+.banner {
+  border-top: solid 5px rgb(56, 59, 55);
+  background-color: white;
+  border-bottom: solid 5px rgb(56, 59, 55);
+  padding: 2em 0 3em 0;
+}
+
+.bannerTwo {
+  background-color: firebrick;
+  width: 70%;
+  border-top: 4px solid rgb(56, 59, 55);
+  border-bottom: 4px solid rgb(56, 59, 55);
+  padding: 2%;
+  margin: 0 14% 2% 14%;
+}
+
+.bannerThree {
+  width: 100%;
+  margin: 0;
+  padding: 4% 0;
+}
+
+.banner-msg {
+  font-size: 2.5vw;
+}
+
+.bg {
+  height: 400px;
+  opacity: 99%;
+  margin: 4% auto 0 auto;
+}
+
+hr {
+  padding: 3px 0;
+  width: 0;
+  margin: 1% auto;
+  color: #fba922;
+  opacity: 100%;
+}
+
+.expandHr {
+  -webkit-animation-name: expandHr;
+  animation-name: expandHr;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-duration: 0.6s;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes expandHr {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 30%;
+  }
+}
+
+@keyframes expandHr {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 30%;
+  }
+}
+
+.card {
+  border: none;
+  min-height: 25em;
+  margin: 2% 1%;
+}
+
+.card-title {
+  font-size: 2vw;
+}
+
+.card-text {
+  padding-top: 7%;
+  width: 100%;
+  font-size: 1.3vw;
+}
+
+.card-img-top {
+  width: 80%;
+  height: 14vw;
+  margin: 10% 10% 0 10%;
+  border: 2px solid firebrick;
+}
+
+.hidden-at-first {
+  opacity: 0;
+}
+
+.column {
+  width: 100%;
+  background-image: url("./images/roof-min.jpeg");
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#safari-parallax-disable {
+  background-image: none;
+  background-color: lightgray;
+}
+
+section {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  width: 100%;
+  background-color: rgb(56, 59, 55);
+  border-bottom: solid 5px white;
+}
+
+/* Carousel styling */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #fba922;
+  border-radius: 10%;
+  width: 4rem;
+  height: 4rem;
+}
+
+.carousel-inner p {
+  color: white;
+  padding: 1%;
+  background-color: rgb(56, 59, 55);
+  border: 2px solid white;
+}
+
+/* begin bottom/footer area styles */
+footer {
+  margin: 0px;
+  padding: 3% 0px;
+  background-color: rgb(56, 59, 55);
+  font-size: 0.7em;
+  text-shadow: 1px 1px grey;
+}
+
+footer div:nth-of-type(2) {
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+}
+
+#bottomNumber {
+  color: #fba922;
+  text-shadow: none;
+  font-size: 1.3em;
+  letter-spacing: 1px;
+}
+
+.fa-facebook {
+  text-shadow: none;
+  font-size: 1.7em;
+}
+
+.fa-github-square {
+  font-size: 1.7em;
+  color: white;
+}
+
+#social {
+  border-left: 6px solid #fba922;
+  padding-left: 0.8em;
+}
+
+#social span {
+  font-size: 1.3em;
+}
+
+.follow {
+  color: lightblue;
+  text-decoration: none;
+}
+/* end bottom/footer area styles */
+
+/* begin form styles */
+#contact {
+  background-color: white;
+  border: none;
+}
+
+form {
+  margin-left: 30%;
+}
+
+label {
+  font-size: 1.5vw;
+  color: firebrick;
+}
+
+.formStyles {
+  background-color: white;
+  color: rgb(56, 59, 55);
+  resize: none;
+}
+/* end form styles */
